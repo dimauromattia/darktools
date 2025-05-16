@@ -8,6 +8,6 @@ The program includes hands-on sessions for practical experience with these tools
 
 The materials provided here are related to the following tools:
 
-DarkSUSY, FeynRules, MadDM, MadGraph, MARTY and DarkPack, micrOMEGAs, Pythia, (...)
+DarkSUSY, FeynRules, MadDM, MadGraph, MARTY and DarkPack, micrOMEGAs, LanHep e Calchep, (...)
 
 
