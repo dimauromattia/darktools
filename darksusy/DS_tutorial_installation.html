@@ -1,0 +1,74 @@
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+<style type="text/css">
+.red {
+    color: #F00;
+}
+</style>
+</head>
+
+<body>
+<h1>DarkSUSY tutorial @ Dark Tools, 2025-06-19</h1>
+<p>In <b>preparation</b> for the DarkSUSY tutorial on June 19, 2025, here are some instructions on how to install DarkSUSY 6. </p>
+<p><strong class="red">It is important that you install DarkSUSY before the tutorial so that we can start with physics problems right away.</strong> We will use the newest version, <strong>DarkSUSY 6.4.1</strong>. If you have any troubles with the installation, please <b> send asap an e-mail </b> to <a href="mailto:torsten.bringman@fys.uio.no">Torsten Bringmann</a> at any time before the tutorial (but feel free to do so afterwards, too). See also the <strong class="red">final comments</strong> further down.
+The preferred way to install DarkSUSY is locally on your machine. This gives you the best performance and easy access to both DarkSUSY and other tools you may need on your computer. It should work on most Linux/Unix systems and on Mac OS X. You need to make sure to have compiler tools installed (make, gfortran, gcc, g++ etc). Furthermore, you also need perl, curl (libcurl), autoconf, aclocal and cmake for all contributed code to compile successfully. </p>
+<p><strong>On Linux systems</strong></p>
+<p>On most Linux systems you already have part of the above requirements installed out of the box, but some you typically still need to install. This is usually done with a pacakge manager (e.g. apt-get on Ubuntu). </p>
+<p><strong>On Mac OS X</strong></p>
+<p>On Mac OS X you need to install Xcode and the command-line tools (xcode-select --install). You also need to install gcc, g++ and gfortran. This can be done from either MacPorts or homebrow or by downloading the binary tar-files from <a href="http://hpc.sourceforge.net">here</a>.</p>
+<p><strong>DarkSUSY installation</strong></p>
+<p>Download <a href="https://darksusy.hepforge.org/tars/darksusy-6.4.1.tgz">darksusy-6.4.1.tgz</a> from <a href="http://darksusy.org">darksusy.org</a> (click 'Downloads' and then select the current release).</p>
+<p>Unpack it, configure and install</p>
+<pre>tar zxvf darksusy-6.4.1.tgz
+cd darksusy-6.4.1
+./configure
+make</pre>
+<p>(NB: if you have gfortran, use ./conf.gfortran instead of ./configure for better performance). Then test the installation by</p>
+<pre>cd examples/test
+./dstest</pre>
+<p>
+  It takes less than a minute to run and should end with something like </p>
+<pre>
+    ====================================<br />
+    Summary of performed DarkSUSY tests<br />
+    ====================================<br />
+    Number of errors reported by dstest_mssm:           0<br />
+    Number of errors reported by dstest_genWIMP:        0<br />
+    Number of errors reported by dstest_genFIMP:        0<br />
+    Number of errors reported by dstest_silveira_zee:   0<br />
+    Number of errors reported by dstest_genWIMP:        0<br />
+<br />
+    Total time needed to run dstest: about 24 s<br />
+    ====================================<br />
+</pre>
+<p>
+ In the configure step above, you can also provide further options to improve compiler performance (e.g. by running ./conf.gfortran instead of configure in case you use gfortran). If something went wrong, you can undo only the make step with 'make clean', or undo the full installation with 'make distclean'.
+ <br><br>
+ <strong>Problems with the installation? </strong>
+ Let <a href="mailto:torsten.bringman@fys.uio.no">me</a> know!<br>
+ <strong>NB: </strong>
+ Contributed packages (i.e. code not part of DarkSUSY, but included in the installation for convenience)
+ are built first; these sompilations steps are often much more 'picky' about the system requirements than the actual DarkSUSY code.
+ <i>If there is a compilation problem with any of the contributed packages that you cannot fix, consider building a 'light' version of DarkSUSY (not making use of any contributed code):</i> Fully uninstall with 'make distclean', followed by './configure' and '<b>make darksusy_light</b>'. This will still allow access to most parts of DarkSUSY and only disable particle modules like the mssm that strongly rely on code in /contrib.
+  <br><br>
+ 
+</p>
+<h1>Final comments</h1>
+<p>If you have managed to get DarkSUSY up and running by following the above steps you are well prepared for the DarkSUSY tutorial. If you have any troubles, please contact me by <a href="mailto:torsten.bringman@fys.uio.no">e-mail</a>. </p>
+
+<p>
+ Technically, DarkSUSY is a library of routines written in FORTRAN (mostly following FORTRAN77 standard, but this is not strictly enforced). In order to use it, some basic knowledge of FORTRAN is thus very helpful. If you have never used FORTRAN before, you should therefore seriously consider to spend additional 15 minutes <strong>before</strong> the tutorial to write your first little program, e.g. by following the instructions in section 4.4 of this <a href="http://users.monash.edu.au/~johnl/astro/linux/tute1.pdf">short intro</a>. A next good step might be to look at a very brief overview of the <a href="https://www2.ph.ed.ac.uk/~playfer/f77_tut.html">basics</a> of FORTRAN, but there are of course many more (and more detailed) tutorials online available.
+</p>
+<p>
+If you want to learn more about DarkSUSY 6 already before the school, consider taking a closer look (in roughly this order) at the <a href="https://darksusy.hepforge.org">DarkSUSY webpage </a>, the example programs in the <tt>/examples</tt> folder, the DarkSUSY article (<a href="http://arxiv.org/abs/1802.03399"> JCAP 07 (2018) [arXiv:1802.03399] </a>) and the <a href="https://darksusy.hepforge.org/pdf/Manual.pdf">manual</a>.
+</p>
+<br>
+<hr/>
+Torsten Bringmann, 2025-06-09
+<p><br>
+</p>
+</body>
+</html>
+
