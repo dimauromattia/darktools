@@ -37,8 +37,8 @@ Given **MadDM** depends on **MadGraph**, we first need to install the latter, fo
    ```
 5. Install some prerequisites: [Pythia](https://pythia.org/) and the tabulated spectra [CosmiXs](https://github.com/ajueid/CosmiXs) (and [PPPC4DMID](http://www.marcocirelli.net/PPPC4DMID.html)):
    ```
-   install pythia8
-   install PPPC4DMID
+   MadDM>install pythia8
+   MadDM>install PPPC4DMID
    ```
-   The installation of Pythia 8 will take care of automatically installing also [LHAPDF](https://www.lhapdf.org/index.html) and `zlib`, while the command `install PPPC4DMID` will also install CosmiXs.
+   The installation of Pythia 8 will take care of automatically installing also [LHAPDF](https://www.lhapdf.org/index.html), `zlib` and the interface in between MadGraph and Pythia (`mg5amc_py8_interface`), while the command `install PPPC4DMID` will also install CosmiXs.
 6. You are now set, have fun!
