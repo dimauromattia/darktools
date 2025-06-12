@@ -41,4 +41,11 @@ Given **MadDM** depends on **MadGraph**, we first need to install the latter, fo
    MadDM>install PPPC4DMID
    ```
    The installation of Pythia 8 will take care of automatically installing also [LHAPDF](https://www.lhapdf.org/index.html), `zlib` and the interface in between MadGraph and Pythia (`mg5amc_py8_interface`), while the command `install PPPC4DMID` will also install CosmiXs.
-6. You are now set, have fun!
+6. For the tutorial, we need few BSM models, that you can download with the following commands, and place them in the `models/` folder in the main MadGraph directory:
+   ```bash
+   wget https://raw.githubusercontent.com/dimauromattia/darktools/refs/heads/main/maddm/DMsimp_s_spin1_MD.tar.gz
+   tar xf DMsimp_s_spin1_MD.tar.gz -C models
+   wget https://raw.githubusercontent.com/dimauromattia/darktools/refs/heads/main/maddm/ScalarHiggsPortal_NLO_UFO.tar.gz
+   tar xf ScalarHiggsPortal_NLO_UFO.tar.gz -C models
+   ```
+7. You are now set, have fun!
