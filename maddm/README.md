@@ -21,7 +21,7 @@ Given **MadDM** depends on **MadGraph**, we first need to install the latter, fo
    ```bash
    wget https://launchpad.net/mg5amcnlo/3.0/3.6.x/+download/MG5_aMC_v2.9.24.tar.gz
    tar xzf MG5_aMC_v2.9.24.tar.gz
-   cd MG5_aMC_v2.9.24
+   cd MG5_aMC_v2_9_24
    ```
 2. Start MadGraph by running:
    ```bash
