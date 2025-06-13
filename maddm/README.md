@@ -24,29 +24,28 @@ Given **MadDM** depends on **MadGraph**, we first need to install the latter, fo
    tar xzf MG5_aMC_v2.9.24.tar.gz
    cd MG5_aMC_v2_9_24
    ```
-2. Start MadGraph by running:
+2. Go into the directory `PLUGIN` and run the following command to clone the MadDM repository, and to copy the executable file:
    ```bash
-   ./bin/mg5_aMC
+   cd PLUGIN
+   git clone -b dev --depth 1 --recurse-submodules --shallow-submodules https://github.com/maddmhep/maddm.git
+   mv maddm/maddm ../bin/maddm.py 
    ```
-3. Type the following in the command line:
-   ```
-   MG5_aMC>install maddm
-   ```
-4. Quit MadGraph and run MadDM with:
-   ```
+3. Go back to the main directory and run MadDM with:
+   ```bash
+   cd ..
    ./bin/maddm.py
    ```
-5. Install some prerequisites: [Pythia](https://pythia.org/) and the tabulated spectra [CosmiXs](https://github.com/ajueid/CosmiXs) (and [PPPC4DMID](http://www.marcocirelli.net/PPPC4DMID.html)):
+4. Install some prerequisites: [Pythia](https://pythia.org/) and the tabulated spectra [CosmiXs](https://github.com/ajueid/CosmiXs) (and [PPPC4DMID](http://www.marcocirelli.net/PPPC4DMID.html)):
    ```
    MadDM>install pythia8
    MadDM>install PPPC4DMID
    ```
    The installation of Pythia 8 will take care of automatically installing also [LHAPDF](https://www.lhapdf.org/index.html), `zlib` and the interface in between MadGraph and Pythia (`mg5amc_py8_interface`), while the command `install PPPC4DMID` will also install CosmiXs.
-6. For the tutorial, we need few BSM models, that you can download with the following commands, and place them in the `models/` folder in the main MadGraph directory:
+5. We need few BSM models, that you can download with the following commands, and place them in the `models/` folder in the main MadGraph directory:
    ```bash
    wget https://raw.githubusercontent.com/dimauromattia/darktools/refs/heads/main/maddm/DMsimp_s_spin1_MD.tar.gz
    tar xf DMsimp_s_spin1_MD.tar.gz -C models
    wget https://raw.githubusercontent.com/dimauromattia/darktools/refs/heads/main/maddm/ScalarHiggsPortal_NLO_UFO.tar.gz
    tar xf ScalarHiggsPortal_NLO_UFO.tar.gz -C models
    ```
-7. You are now set, have fun!
+6. You are now set, have fun!
