@@ -1,0 +1,34 @@
+Model:         	FPVDM_with_top
+Gauge:         	Feynman
+Process:   	p,p->Tp,tp
+Decay:     	Tp->V0,T
+Decay:     	tp->V0,t
+Decay:     	V0->t,T
+
+
+Composite: 	p=u,U,d,D,s,S,c,C,b,B,G
+
+pdf1:      	PDT:cteq6l1(proton)
+pdf2:      	PDT:cteq6l1(proton)
+
+p1:        6800
+p2:        6800
+
+Parameter: MV=400
+Parameter: Mh2=500
+Parameter: MtD=750
+Parameter: gd=0.1
+
+Run parameter: Mtp
+Run begin:     800
+Run step size: 100
+Run n steps:   10
+
+alpha Q :      Mtp
+
+Number of events (per run step): 1000
+Filename:                        FPVDM_6T
+
+Parallelization method:      local
+Max number of nodes:   8
+Max number of processes per node: 1
