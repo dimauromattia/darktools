@@ -2,6 +2,9 @@
 
 **MadDM** is a plugin for ``MG5_aMC@NLO`` (**MadGraph**) for the computation of several dark matter-related observables.
 
+With the next instructions, you will be able to install the latest version of MadDM, v3.3, which is still in beta version (so bugs are expected, bear with us!).
+We will install the branch `rc/3.3` (which stands for *release candidate*).
+
 ## Requirements
 
 - MadGraph v2.9 (LTS version) is required to run the latest version of MadDM, MadGraph v3.* may be supported but more testing is necessary (**notice: this is not the same version used for the MadGraph tutorials**).
@@ -33,7 +36,7 @@ Given **MadDM** depends on **MadGraph**, we first need to install the latter, fo
 2. Go into the directory `PLUGIN` and run the following command to clone the MadDM repository, and to copy the executable file:
    ```bash
    cd PLUGIN
-   git clone -b dev --depth 1 --recurse-submodules --shallow-submodules https://github.com/maddmhep/maddm.git
+   git clone -b rc/3.3 --depth 1 --recurse-submodules --shallow-submodules https://github.com/maddmhep/maddm.git
    mv maddm/maddm ../bin/maddm.py 
    ```
 3. Go back to the main directory and run MadDM with:
